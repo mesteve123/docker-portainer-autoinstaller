@@ -8,8 +8,7 @@ Install Docker and Portainer with a single script.
 - Access to Portainer **HTTPS (port 9443)**
 
 ## Installation
+Just run:
 ```bash
-git clone https://github.com/mesteve123/docker-portainer-autoinstaller.git
-cd docker-portainer-autoinstaller
-chmod +x install_docker_portainer.sh
-./install_docker_portainer.sh
+curl -fsSL https://raw.githubusercontent.com/mesteve123/docker-portainer-autoinstaller/main/install_docker_portainer.sh -o install_docker_portainer.sh && chmod +x install_docker_portainer.sh && sudo ./install_docker_portainer.sh
+
