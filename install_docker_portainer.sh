@@ -3,7 +3,7 @@
 set -e
 
 echo "========================================="
-echo " Autoinstaller Docker and Portainer on Ubuntu "
+echo " Autoinstaller Docker and Portainer on Ubuntu"
 echo "========================================="
 
 # Comprobar si se ejecuta como root
@@ -60,3 +60,4 @@ echo "Installation completed successfully"
 echo "Portainer is accessible at:"
 echo "https://$IP:9443"
 echo "========================================="
+
