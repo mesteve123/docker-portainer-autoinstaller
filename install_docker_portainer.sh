@@ -53,6 +53,8 @@ IP=$(hostname -I | awk '{print $1}')
 clear
 
 echo "========================================="
+echo " Autoinstaller Docker and Portainer on Ubuntu"
+echo "========================================="
 echo "Installation completed successfully"
 echo "Portainer is accessible at:"
 echo "https://$IP:9443"
