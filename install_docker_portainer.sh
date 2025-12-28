@@ -12,9 +12,6 @@ if [ "$EUID" -ne 0 ]; then
   exit 1
 fi
 
-echo "Updating system..."
-apt update && apt upgrade -y
-
 echo "Installing dependencies..."
 apt install ca-certificates curl gnupg lsb-release -y
 
