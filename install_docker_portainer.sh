@@ -48,6 +48,8 @@ docker run -d \
   -v portainer_data:/data \
   portainer/portainer-ce:latest
 
+rm install_docker_portainer.sh
+
 IP=$(hostname -I | awk '{print $1}')
 
 clear
