@@ -52,6 +52,16 @@ rm install_docker_portainer.sh
 
 IP=$(hostname -I | awk '{print $1}')
 
+echo "Waiting for Portainer to generate the setup token..."
+SETUP_TOKEN=""
+for i in $(seq 1 30); do
+  SETUP_TOKEN=$(docker logs portainer 2>&1 | grep -oP 'setup_token=\K\S+' || true)
+  if [ -n "$SETUP_TOKEN" ]; then
+    break
+  fi
+  sleep 1
+done
+
 clear
 
 echo "========================================="
@@ -60,5 +70,10 @@ echo "========================================="
 echo "Installation completed successfully"
 echo "Portainer is accessible at:"
 echo "https://$IP:9443"
+if [ -n "$SETUP_TOKEN" ]; then
+  echo "Setup token: $SETUP_TOKEN"
+else
+  echo "Setup token not found yet. Retrieve it manually with:"
+  echo "docker logs portainer | grep setup_token"
+fi
 echo "========================================="
-
